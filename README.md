@@ -49,7 +49,7 @@ Se puede observar cómo se hizo la inserción en la base de datos y cómo se reg
 
 ### Ejecución 2
 
-![Ejecución 2 con el JSON](Captura%20de%20pantalla%20(20).png)
+![Ejecución 2 con el JSON](Captura%20de%20pantalla%20(19).png)
 
 Aquí se observa una segunda prueba.
 
