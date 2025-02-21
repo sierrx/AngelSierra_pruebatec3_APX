@@ -8,8 +8,8 @@ Este proyecto contiene la implementación y pruebas de un servicio en Java, usan
 
 ```sql
 CREATE TABLE WIKJ."T_WIKJ_HAB_PRUEBAFINAL"(
-    dni NUMBER(5) NOT NULL PRIMARY KEY,
-    nuip NUMBER(10),
+    dni Number(5) NOT NULL PRIMARY KEY,
+    nuip Number(10) NOT NULL UNIQUE,
     full_name VARCHAR(50),
     phone VARCHAR(15),
     address VARCHAR(30)
@@ -17,8 +17,8 @@ CREATE TABLE WIKJ."T_WIKJ_HAB_PRUEBAFINAL"(
 
 SELECT dni, nuip, full_name, phone, address FROM WIKJ.T_WIKJ_HAB_PRUEBAFINAL WHERE dni=:dni;
 
-INSERT INTO WIKJ.T_WIKJ_HAB_PRUEBAFINAL (dni, nuip, full_name, phone, address) 
-VALUES(:dni, :nuip, :full_name, :phone, :address);
+SELECT dni, nuip, full_name, phone, address FROM WIKJ.T_WIKJ_HAB_PRUEBAFINAL WHERE dni=:dni;
+INSERT INTO WIKJ.T_WIKJ_HAB_PRUEBAFINAL (DNI, NUIP, FULL_NAME, PHONE, ADDRESS) VALUES(:dni, :nuip, :full_name, :phone, :address);
 ```
 
 ## WIKJ
@@ -52,6 +52,30 @@ Se puede observar cómo se hizo la inserción en la base de datos y cómo se reg
 ![Ejecución 2 con el JSON](Captura%20de%20pantalla%20(19).png)
 
 Aquí se observa una segunda prueba.
+
+### Ejecución 3
+
+![Ejecución 3 con el JSON](Captura%20de%20pantalla%20(33).png)
+
+Aquí se observa una tercera prueba.
+
+### Ejecución 4
+
+![Ejecución 4 con el JSON](Captura%20de%20pantalla%20(34).png)
+y se observa que se ingreso el mismo nuip y por ello dio error 
+
+### Ejecución 5
+
+![Ejecución 5 con el JSON](Captura%20de%20pantalla%20(35).png)
+se muestra una inserccion mas y correcta con una nuip no utilizada
+
+
+### Supuestos 
+
+-no se especifico como se tenia que hacer la validacion de nuip para que no se repitiera por ello desde la base de datos se le asigna un NOT NULL Y UNIQUE al nuip para que no se repita y esto hace que no haya nuips repetidos
+-La prueba pide tener un DTO de salida y otro de entrada, ambos pasando obligatoriamente por la librería de negocio, si es la capa Bussines es de ASO y en los archivos encontramos la siguiente imagen 
+![apx](componentes_rm.png)
+donde especifica que el DTO es la representacion del bean de una entidad de negocio por lo cual cumple con ello
 
 ## Tecnologías Utilizadas
 
