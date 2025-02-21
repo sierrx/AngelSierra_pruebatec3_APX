@@ -23,6 +23,7 @@ public class WIKJR777Impl extends WIKJR777Abstract {
 		args.put("full_name", dtoIn.getFull_name());
 		args.put("phone", dtoIn.getPhone());
 		args.put("address", dtoIn.getAddress());
+
 		int result = this.wikjR778.executeInsert(args);
 		if(result == 1){
 			Map<String, Object> response = this.wikjR778.executeSelect(dtoIn.getDni());

@@ -5,9 +5,7 @@ import com.bbva.elara.library.AbstractLibrary;
 import com.bbva.wikj.lib.r777.WIKJR777;
 import com.bbva.wikj.lib.r778.WIKJR778;
 
-/**
- * This class automatically defines the libraries and utilities that it will use.
- */
+
 public abstract class WIKJR777Abstract extends AbstractLibrary implements WIKJR777 {
 
 	protected ApplicationConfigurationService applicationConfigurationService;
